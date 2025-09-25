@@ -18,13 +18,16 @@ class MyApp extends StatelessWidget {
       providers: [BlocProvider(create: (context) => di.sl<PortfolioCubit>())],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
+
         title: 'Portfolio Demo',
         theme: ThemeData(
+          fontFamily: 'Roboto',
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         ),
         home: const CommonBotBar(
           defaultIndex: 0,
-        ), // دلوقتي عنده access للـ cubit
+        ), // Cubit can be accessed from any screen (page
+        // in the bottom navigation bar
       ),
     );
   }
